@@ -1,0 +1,33 @@
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+# Django-related files
+*.pyc
+*.pyo
+*.pyd
+*.pyi
+*.egg-info
+__pycache__/
+*.sqlite3
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# Media files (user-generated content)
+media/
+
+# Static files (collected using Django's `collectstatic` command)
+staticfiles/
+
+# Dependency directories
+venv/
+node_modules/
+celery_app/settings.py

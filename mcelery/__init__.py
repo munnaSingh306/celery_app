@@ -1,0 +1,1 @@
+from mcelery.celery import app
