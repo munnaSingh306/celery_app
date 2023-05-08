@@ -31,3 +31,4 @@ staticfiles/
 venv/
 node_modules/
 celery_app/settings.py
+practice questions.py
