@@ -15,7 +15,7 @@ def check_celery_task():
 @app.task
 def add(x, y):
     z = x + y
-    print(datetime.now(), "Task add:", x, y, z)
+    logger.log(msg=f"{datetime.now()}, Task add:, {x, y, z}")
 
 
 app.conf.beat_schedule = {
@@ -27,7 +27,8 @@ app.conf.beat_schedule = {
 }
 app.conf.timezone = 'Asia/Kolkata'
 
+
 @shared_task
 def scheduel_task(a, b):
-    print(datetime.now(), "Task add:", a, b)
+    logger.log(msg=f"{datetime.now()}, Task add: {a, b}")
     return None

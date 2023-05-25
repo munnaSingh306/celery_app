@@ -15,8 +15,10 @@ class DefaultView(APIView):
 class testCeleryTask(APIView):
 
     def get(self, request):
-        tasks.check_celery_task.delay()
-        return JsonResponse(data={"message": "task triggered"}, status=status.HTTP_200_OK)
+        task_id = tasks.check_celery_task.delay()
+        print("--------------->", task_id)
+        return JsonResponse(data={"message": "task triggered",
+                                  "task_id": task_id}, status=status.HTTP_200_OK)
 
 
 from django.http import JsonResponse
