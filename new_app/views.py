@@ -15,7 +15,7 @@ class testCeleryTask(APIView):
     def get(self, request):
         task_id = tasks.scheduel_task.delay(10,20)
         print("--------------->", task_id)
-        return Response(data={"message": "task triggered","task_id": str(task_id)}, status=status.HTTP_200_OK)
+        return Response(data={"message": "task triggered","task_id": task_id}, status=status.HTTP_200_OK)
 
     def put(self, request):
         task_id = request.data.get('task_id')
