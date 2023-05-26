@@ -22,9 +22,7 @@ class testCeleryTask(APIView):
         task_id = request.data.get('task_id')
         result = AsyncResult(task_id, app=app)
         task_info = {
-            'Status': result.status,
-            'Result': result.result,
-            'Traceback': result.traceback,
+            'Status': str(result.status),
             'Task Info': result.info
         }
         print(task_info)
