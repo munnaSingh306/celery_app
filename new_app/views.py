@@ -26,4 +26,4 @@ class testCeleryTask(APIView):
             'Task Info': result.info
         }
         print(task_info)
-        return Response(data=json.dump({'Task Info': task_info}), status=status.HTTP_200_OK)
+        return Response(data={'Task Info': task_info}, status=status.HTTP_200_OK)
